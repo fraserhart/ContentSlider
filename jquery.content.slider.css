@@ -1,0 +1,72 @@
+/*
+ * jQuery Content Slider v1.0
+ * http://www.fraser-hart.co.uk
+ *
+ * Copyright 2012, Fraser Hart
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+body{text-align: center}
+.wrapper{width: 600px; margin:0 auto; text-align: left}
+
+
+/*START OF SLIDER STYLES*/
+	.subSlider{
+		/*SET THE WIDTH OF THE VIEWABLE AREA HERE*/
+		width: 489px; 
+		
+		overflow: hidden; 
+		white-space: nowrap;
+	}
+		.subSlider ul{
+			/*SET THE HEIGHT OF THE VIEWABLE AREA HERE*/
+			height: 100px; 
+			
+			list-style: none; 
+			padding: 0; 
+			margin: 0; 
+			overflow: hidden;
+		}
+			.subSlider ul li{
+				/*SET THE WIDTH OF YOUR INDIVIDUAL SLIDES HERE.
+				You can also add padding or borders or any styling to the items to control the appearance*/
+				width:141px; 
+				
+				display: block; 
+				float: left; 
+				margin: 0; 
+				vertical-align: top; 
+				text-align: center; 
+				white-space: normal; 
+				padding: 0;
+			}
+			
+	/*NEXT/PREV BUTTON STYLES*/
+	.subSliderNav{
+		height: 18px; 
+		width: 10px; 
+		background: url(contentSliderNav.png); 
+		position: absolute; 
+		left: -18px; 
+		top:40px; 
+		z-index: 9; 
+		cursor: pointer;
+	}
+	.subSliderNav.next{
+		background-position: -10px 0; 
+		left: auto; 
+		right: -18px;
+	}
+/*END OF SLIDER STYLES*/
+
+/*THESE ARE JUST SOME THROW AWAY STYLES TO HELP WITH THE DEMONSTRATION. YOU CAN IGNORE OR OVERWRITE THESE*/
+
+.subSlider ul li{
+	/*SET THE WIDTH OF YOUR INDIVIDUAL SLIDES HERE.
+	You can also add padding or borders or any styling to the items to control the appearance*/
+	padding:10px;
+	height: 78px;
+	border:1px dashed #999;
+	background: #eee;
+}

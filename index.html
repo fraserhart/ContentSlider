@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>jQuery Content Slider</title>
+		<link rel="stylesheet" type="text/css" href="jquery.content.slider.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script src="jquery.content.slider.min.js"></script>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23992586-1']);
+		  _gaq.push(['_setDomainName', 'fraser-hart.co.uk']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<H1>jQuery Content Slider</H1>
+			<div id="contentSlider">
+				<ul>
+					<li>Content area 1</li>
+					<li>Content area 2</li>
+					<li>Content area 3</li>
+					<li>Content area 4</li>
+					<li>Content area 5</li>
+					<li>Content area 6</li>
+					<li>Content area 7</li>
+					<li>Content area 8</li>
+					<li>Content area 9</li>
+				</ul>
+			</div>
+			
+			<div style="clear:both"></div>
+			<br /><br />
+			For documentation and more info visit <a href="http://blog.fraser-hart.co.uk/jquery-content-slider-simple-plug-in/">http://blog.fraser-hart.co.uk/jquery-content-slider-simple-plug-in/</a>
+		</div>
+		<script>
+			$(function(){
+				$('#contentSlider').subSlider();
+			})
+		</script>
+	</body>
+</html>
