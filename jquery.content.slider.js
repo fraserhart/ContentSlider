@@ -16,12 +16,14 @@
 	    }, options);
 	    
         var elems = this.find("ul").first().find("li");
+        var allowSlide = true;
         this.addClass('subSlider').wrap('<div class="subSliderWrapper '+settings.addClasses+'" style="height: '+this.css('height')+'; width: '+this.css('width')+'; float: left; position: relative" />');
         var numberOfSlides = parseInt(elems.length),
 			eachWidth = parseInt(elems.css("width").replace("px", "")),
 			eachBorder = parseInt(elems.css("border-right-width"))+parseInt(elems.css("border-left-width")),
-			eachPadding = parseInt(elems.css("padding-right"))+parseInt(elems.css("padding-left")),
-			totalItemWidth = eachWidth+eachBorder+eachPadding,
+			eachMargin = parseInt(elems.css("margin-right"))+parseInt(elems.css("margin-left")),
+                        eachPadding = parseInt(elems.css("padding-right"))+parseInt(elems.css("padding-left")),
+			totalItemWidth = eachWidth+eachBorder+eachPadding+eachMargin,
 			totalWidth = totalItemWidth*numberOfSlides;
 		
 		function showHideNav(elementToMove){
@@ -41,13 +43,17 @@
 		$(this).parent().prepend('<div class="subSliderNav"></div><div class="subSliderNav next"></div>');
 		$(this).parent().find('ul').width(totalWidth);
 		$(this).parent().on("click", ".subSliderNav", function(){
-			var direction = $(this).hasClass('next')?"-":"+";
-			var elementToMove = $(this).parent().find('.subSlider ul');
-			elementToMove.animate({
-				"margin-left": direction+"="+totalItemWidth
-			}, settings.speed, function(){
-				showHideNav(elementToMove);
-			});
+                        if (allowSlide == true){
+                            allowSlide = false;
+                            var direction = $(this).hasClass('next')?"-":"+";
+                            var elementToMove = $(this).parent().find('.subSlider ul');
+                            elementToMove.animate({
+                                    "margin-left": direction+"="+totalItemWidth
+                            }, settings.speed, function(){
+                                    showHideNav(elementToMove);
+                                    allowSlide = true;
+                            });
+                        }
 		});
 		showHideNav($(this).find('ul'));
     };
